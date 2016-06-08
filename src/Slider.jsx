@@ -408,7 +408,7 @@ Slider.propTypes = {
   range: React.PropTypes.bool,
   vertical: React.PropTypes.bool,
   allowCross: React.PropTypes.bool,
-  tooltipOptions: React.object.bool,
+  tooltipOptions: React.PropTypes.object,
 };
 
 Slider.defaultProps = {
