@@ -29,7 +29,7 @@ const CustomizedSlider = React.createClass({
     });
   },
   render: function() {
-    return <Slider value={this.state.value} onChange={this.onSliderChange} />;
+    return <Slider value={this.state.value} onChange={this.onSliderChange} tooltipOptions={{position: 'bottom'}}/>;
   },
 });
 

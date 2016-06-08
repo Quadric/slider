@@ -328,7 +328,7 @@ class Slider extends React.Component {
   render() {
     const {handle, upperBound, lowerBound} = this.state;
     const {className, prefixCls, disabled, vertical, dots, included, range, step,
-      marks, max, min, tipTransitionName, tipFormatter, children} = this.props;
+      marks, max, min, tipTransitionName, tipFormatter, children, tooltipOptions} = this.props;
 
     const customHandle = this.props.handle;
 
@@ -340,13 +340,17 @@ class Slider extends React.Component {
 
     const upper = cloneElement(customHandle, { className: handleClassName,
         noTip: isNoTip, tipTransitionName: tipTransitionName, tipFormatter: tipFormatter,
-        vertical: vertical, offset: upperOffset, value: upperBound, dragging: handle === 'upperBound' });
+        vertical: vertical, offset: upperOffset, value: upperBound, dragging: handle === 'upperBound',
+        ...tooltipOptions
+      });
 
     let lower = null;
     if (range) {
       lower = cloneElement(customHandle, { className: handleClassName,
         noTip: isNoTip, tipTransitionName: tipTransitionName, tipFormatter: tipFormatter,
-        vertical: vertical, offset: lowerOffset, value: lowerBound, dragging: handle === 'lowerBound' });
+        vertical: vertical, offset: lowerOffset, value: lowerBound, dragging: handle === 'lowerBound',
+        ...tooltipOptions
+      });
     }
 
     const sliderClassName = classNames({
@@ -404,6 +408,7 @@ Slider.propTypes = {
   range: React.PropTypes.bool,
   vertical: React.PropTypes.bool,
   allowCross: React.PropTypes.bool,
+  tooltipOptions: React.object.bool,
 };
 
 Slider.defaultProps = {
