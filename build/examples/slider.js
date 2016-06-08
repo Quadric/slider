@@ -45,7 +45,7 @@ webpackJsonp([3],{
 	    });
 	  },
 	  render: function render() {
-	    return React.createElement(Slider, { value: this.state.value, onChange: this.onSliderChange, tooltipOptions: { position: 'bottom' } });
+	    return React.createElement(Slider, { value: this.state.value, onChange: this.onSliderChange, tooltipOptions: { placement: 'bottom' } });
 	  }
 	});
 	
